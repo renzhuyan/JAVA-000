@@ -1,0 +1,69 @@
+Microsoft Windows [版本 6.1.7601]
+版权所有 (c) 2009 Microsoft Corporation。保留所有权利。
+
+E:\JAVA-000\Week_01>cd E:\Program Files\Java\jdk1.8.0_144\bin
+
+E:\Program Files\Java\jdk1.8.0_144\bin>javac E:\JAVA-000\Week_01\src\main\java\lesson01\question01\Hello.java
+
+E:\Program Files\Java\jdk1.8.0_144\bin>javap -c E:\JAVA-000\Week_01\src\main\java\lesson01\question01\Hello.class
+Compiled from "Hello.java"
+public class lesson01.question01.Hello {
+  public lesson01.question01.Hello();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: new           #2                  // class lesson01/question01/Hello
+       3: dup
+       4: invokespecial #3                  // Method "<init>":()V
+       7: astore_1
+       8: getstatic     #4                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      11: aload_1
+      12: invokevirtual #5                  // Method sum:()I
+      15: invokevirtual #6                  // Method java/io/PrintStream.println:(I)V
+      18: getstatic     #4                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      21: aload_1
+      22: bipush        10
+      24: invokevirtual #7                  // Method loop:(I)I
+      27: invokevirtual #6                  // Method java/io/PrintStream.println:(I)V
+      30: return
+
+  public int sum();
+    Code:
+       0: iconst_1
+       1: istore_1
+       2: iconst_2
+       3: istore_2
+       4: iload_1
+       5: iload_2
+       6: iadd
+       7: iconst_4
+       8: imul
+       9: ireturn
+
+  public int loop(int);
+    Code:
+       0: iconst_0
+       1: istore_2
+       2: iload_1
+       3: bipush        10
+       5: if_icmpge     10
+       8: iconst_0
+       9: ireturn
+      10: iconst_0
+      11: istore_3
+      12: iload_3
+      13: iload_1
+      14: if_icmpgt     27
+      17: iload_2
+      18: iload_3
+      19: iadd
+      20: istore_2
+      21: iinc          3, 1
+      24: goto          12
+      27: iload_2
+      28: ireturn
+}
